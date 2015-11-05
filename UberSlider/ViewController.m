@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "OneViewController.h"
 #import "LeftMenuView.h"
-
+#import <MapKit/MapKit.h>
 #define APP_WIDTH [UIScreen mainScreen].bounds.size.width
 #define APP_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define LEFT_WIDTH 220.0
@@ -26,29 +25,34 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _leftShow = NO;
-    _hiddenStatusBar = NO;
-    OneViewController *onwVc = [[OneViewController alloc] init];UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(leftViewVisible)];
-    onwVc.navigationItem.leftBarButtonItem = item;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:onwVc];
-    nav.view.frame = CGRectMake(0, 20, APP_WIDTH, APP_HEIGHT - 20);
-    [self.view addSubview:nav.view];
     
+    // 增加nav 的按钮
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(leftViewVisible)];
+    self.navigationItem.leftBarButtonItem = item;
+  
+    // 加地图
+    MKMapView *mView = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [self.view addSubview:mView];
+    // 初始化侧边栏
     [self initBlackViewAndLeftView];
 }
 
+#pragma mark ###############以下全部函数为侧边栏#####################
+
 - (void)initBlackViewAndLeftView {
-    
+    _leftShow = NO;
+    _hiddenStatusBar = NO;
     _blackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT)];
     _blackView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.610];
     _blackView.hidden = YES;
     _blackView.alpha = 0;
-    [self.view addSubview:_blackView];
+    [[[[UIApplication sharedApplication]delegate]window] addSubview:_blackView];
     _leftView = [[LeftMenuView alloc] initWithFrame:CGRectMake(-LEFT_WIDTH, 0, LEFT_WIDTH, APP_HEIGHT)];
     _leftView.backgroundColor = [UIColor colorWithRed:0.000 green:0.000 blue:0.115 alpha:1.000];
-    [self.view addSubview:_leftView];
+    [[[[UIApplication sharedApplication]delegate]window] addSubview:_leftView];
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandle:)];
     UIPanGestureRecognizer *pan1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandle:)];
     UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandle:)];
@@ -60,13 +64,10 @@
     
 }
 
+//手势
+
 - (void)panHandle:(UIPanGestureRecognizer *)gesture {
     CGFloat translation = [gesture translationInView:gesture.view].x;
-//    NSLog(@"%f", translation);
-    // 判断是否为有效滑动
-//    CGFloat minimumX = 0;
-//    CGFloat maximumX = LEFT_WIDTH;
-//    CGFloat distance = maximumX - minimumX;
     if ((translation < 0 && !_leftShow) || (translation > 0 && _leftShow)) {
         return;
     }

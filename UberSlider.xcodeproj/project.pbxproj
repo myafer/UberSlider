@@ -15,11 +15,11 @@
 		8F17E29B1B73771A00F575C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F17E29A1B73771A00F575C4 /* Images.xcassets */; };
 		8F17E29E1B73771A00F575C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F17E29C1B73771A00F575C4 /* LaunchScreen.xib */; };
 		8F17E2AA1B73771A00F575C4 /* UberSliderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F17E2A91B73771A00F575C4 /* UberSliderTests.m */; };
-		8F17E2B51B73873300F575C4 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F17E2B41B73873300F575C4 /* OneViewController.m */; };
 		8F17E2B81B73A74C00F575C4 /* LeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F17E2B71B73A74C00F575C4 /* LeftMenuView.m */; };
 		8F17E2BA1B73B04D00F575C4 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F17E2B91B73B04D00F575C4 /* 12.png */; };
 		8F17E2BC1B73B0F900F575C4 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F17E2BB1B73B0F900F575C4 /* 123.png */; };
 		8F17E2BF1B73B15300F575C4 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F17E2BE1B73B15300F575C4 /* MenuTableViewCell.m */; };
+		8F3D5CF71B75B93700C3C28E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3D5CF61B75B93700C3C28E /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +47,13 @@
 		8F17E2A31B73771A00F575C4 /* UberSliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberSliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F17E2A81B73771A00F575C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F17E2A91B73771A00F575C4 /* UberSliderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UberSliderTests.m; sourceTree = "<group>"; };
-		8F17E2B31B73873300F575C4 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
-		8F17E2B41B73873300F575C4 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		8F17E2B61B73A74C00F575C4 /* LeftMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuView.h; sourceTree = "<group>"; };
 		8F17E2B71B73A74C00F575C4 /* LeftMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuView.m; sourceTree = "<group>"; };
 		8F17E2B91B73B04D00F575C4 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		8F17E2BB1B73B0F900F575C4 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		8F17E2BD1B73B15300F575C4 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		8F17E2BE1B73B15300F575C4 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		8F3D5CF61B75B93700C3C28E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3D5CF71B75B93700C3C28E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +78,7 @@
 		8F17E27E1B73771A00F575C4 = {
 			isa = PBXGroup;
 			children = (
+				8F3D5CF61B75B93700C3C28E /* MapKit.framework */,
 				8F17E2BB1B73B0F900F575C4 /* 123.png */,
 				8F17E2B91B73B04D00F575C4 /* 12.png */,
 				8F17E2891B73771A00F575C4 /* UberSlider */,
@@ -107,8 +108,6 @@
 				8F17E29C1B73771A00F575C4 /* LaunchScreen.xib */,
 				8F17E2911B73771A00F575C4 /* UberSlider.xcdatamodeld */,
 				8F17E28A1B73771A00F575C4 /* Supporting Files */,
-				8F17E2B31B73873300F575C4 /* OneViewController.h */,
-				8F17E2B41B73873300F575C4 /* OneViewController.m */,
 				8F17E2B61B73A74C00F575C4 /* LeftMenuView.h */,
 				8F17E2B71B73A74C00F575C4 /* LeftMenuView.m */,
 				8F17E2BD1B73B15300F575C4 /* MenuTableViewCell.h */,
@@ -247,7 +246,6 @@
 			files = (
 				8F17E2B81B73A74C00F575C4 /* LeftMenuView.m in Sources */,
 				8F17E2901B73771A00F575C4 /* AppDelegate.m in Sources */,
-				8F17E2B51B73873300F575C4 /* OneViewController.m in Sources */,
 				8F17E2BF1B73B15300F575C4 /* MenuTableViewCell.m in Sources */,
 				8F17E28D1B73771A00F575C4 /* main.m in Sources */,
 				8F17E2961B73771A00F575C4 /* ViewController.m in Sources */,
@@ -378,8 +376,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UberSlider/BaiDuMap/Release-iphoneos",
+					"$(PROJECT_DIR)/UberSlider/BaiDuMap/Release-iphonesimulator",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = UberSlider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -389,8 +394,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UberSlider/BaiDuMap/Release-iphoneos",
+					"$(PROJECT_DIR)/UberSlider/BaiDuMap/Release-iphonesimulator",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = UberSlider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
